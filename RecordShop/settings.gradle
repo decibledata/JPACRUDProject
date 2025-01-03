@@ -1,0 +1,3 @@
+rootProject.name = 'RecordShop'
+include 'JPARecords'
+project(':JPARecords').projectDir = file('/Users/georgevillegas/SD/Java/JPACrudProject/JPARecords')
