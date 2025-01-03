@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "record_store")
+@Table(name = "record_shop")
 public class RecordStore {
 
 	@Id
@@ -51,7 +51,7 @@ public class RecordStore {
 	}
 
 	public void setAlbumTitle(String albumTitle) {
-		albumTitle = albumTitle;
+		this.albumTitle = albumTitle;
 	}
 
 	public String getColor() {
@@ -115,7 +115,7 @@ public class RecordStore {
 	}
 
 	public void setReleaseYear(int releaseYear) {
-		releaseYear = releaseYear;
+		this.releaseYear = releaseYear;
 	}
 
 	public String getReleaseType() {
@@ -123,7 +123,7 @@ public class RecordStore {
 	}
 
 	public void setReleaseType(String releaseType) {
-		releaseType = releaseType;
+		this.releaseType = releaseType;
 	}
 
 	public int getStock() {
@@ -139,7 +139,7 @@ public class RecordStore {
 	}
 
 	public void setSpecialFeatures(String specialFeatures) {
-		specialFeatures = specialFeatures;
+		this.specialFeatures = specialFeatures;
 	}
 
 	public int getTrackCount() {
@@ -147,7 +147,7 @@ public class RecordStore {
 	}
 
 	public void setTrackCount(int trackCount) {
-		trackCount = trackCount;
+		this.trackCount = trackCount;
 	}
 
 	public String getTracklist() {

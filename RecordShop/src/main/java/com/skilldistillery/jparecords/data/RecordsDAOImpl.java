@@ -1,11 +1,7 @@
 package com.skilldistillery.jparecords.data;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -29,25 +25,29 @@ public class RecordsDAOImpl implements RecordsDAO {
 	private EntityManager em;
 
 	@Override
-	public RecordStore create(int id) {
-		// TODO Auto-generated method stub
+	public RecordStore create(RecordStore newRecord) {
+		em.persist(newRecord);
 		return null;
 	}
 
 	@Override
-	public RecordStore update(RecordStore record) {
-		// TODO Auto-generated method stub
+	public RecordStore update(int id, RecordStore updateRecord) {
+		RecordStore update = em.find(RecordStore.class, id);
 		return null;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			RecordStore update = em.find(RecordStore.class, id);
+			em.remove(update);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 	@Override
 	public RecordStore findRecordById(int id) {
-		// TODO Auto-generated method stue
 		return em.find(RecordStore.class, id);
 	}
 	
@@ -81,20 +81,8 @@ public class RecordsDAOImpl implements RecordsDAO {
 
 	@Override
 	public List<RecordStore> findAll() {
-		List<RecordStore> records = new ArrayList<>();
-		
-		try (Connection conn = DriverManager.getConnection(URL, user, pass)){
-			String sql = "SELECT * FROM record_shop";
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
-			
-			while (rs.next()) {
-				RecordStore record = populateRecordFromResultSet(rs);
-				records.add(record);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return records;
-	}
+
+			String jpql = "SELECT r FROM RecordStore r";
+			return em.createQuery(jpql, RecordStore.class).getResultList();
+}
 }
