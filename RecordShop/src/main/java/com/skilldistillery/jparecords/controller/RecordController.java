@@ -26,10 +26,8 @@ public class RecordController {
 	}
 	
 	//Result Page
-	@GetMapping("/result/{id}")
-	public String goResult(@PathVariable int id, Model model) {
-		RecordStore record = recordsdao.findRecordById(id);
-		model.addAttribute("record", record);
+	@RequestMapping(path = { "result.do"})
+	public String goResult(Model model) {
 		return "result";
 	}
 	
@@ -42,8 +40,8 @@ public class RecordController {
 	
 	@GetMapping("/inventory.do")
 	public String goInventory(Model model) {
-//		List<RecordStore> store = recordsdao.findAll();
-//		model.addAttribute("store", store);
+		List<RecordStore> store = recordsdao.findAll();
+		model.addAttribute("store", store);
 		return "inventory";
 	}
 	
