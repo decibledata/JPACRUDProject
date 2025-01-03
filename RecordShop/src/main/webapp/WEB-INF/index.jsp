@@ -11,7 +11,7 @@
 	<h1>Welcome to Two Cat Tracks</h1>
 	<p>Purr-fect tunes, Just for you!</p>
 
-	<form action="findrecordbyid.do" method="get">
+	<form action="result.do" method="GET">
 		<fieldset>
 			<legend>
 				<h3>Shop for Record by ID</h3>

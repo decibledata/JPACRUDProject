@@ -47,7 +47,7 @@ public class RecordsDAOImpl implements RecordsDAO {
 	}
 	@Override
 	public RecordStore findRecordById(int id) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stue
 		return em.find(RecordStore.class, id);
 	}
 	

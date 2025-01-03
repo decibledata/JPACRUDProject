@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.jparecords.data.RecordsDAO;
 import com.skilldistillery.jparecords.entity.RecordStore;
@@ -26,9 +27,11 @@ public class RecordController {
 	}
 	
 	//Result Page
-	@RequestMapping(path = { "result.do"})
-	public String goResult(Model model) {
-		return "result";
+	@RequestMapping(path = "result.do", method = RequestMethod.GET)
+	public String goResult(Model model, @RequestParam("id") Integer id) {
+		RecordStore record = recordsdao.findRecordById(id);
+		model.addAttribute("record", record);
+		return "views/result";
 	}
 	
 	//Record Creation Form
