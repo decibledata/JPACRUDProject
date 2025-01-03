@@ -20,4 +20,11 @@
 				id="id"> <input type="submit" value="Search">
 		</fieldset>
 	</form>
+	
+	<form action="inventory.jsp" method="get">
+		<input type="submit" value="View Inventory">
+	</form>
+
+	</body>
+	
 </html>

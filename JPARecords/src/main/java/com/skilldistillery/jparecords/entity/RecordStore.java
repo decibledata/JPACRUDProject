@@ -12,7 +12,7 @@ public class RecordStore {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String artist;
-	private String AlbumTitle;
+	private String albumTitle;
 	private String color;
 	private String condition;
 	private int duration;
@@ -20,11 +20,11 @@ public class RecordStore {
 	private String genre;
 	private String label;
 	private double price;
-	private int ReleaseYear;
-	private String ReleaseType;
+	private int releaseYear;
+	private String releaseType;
 	private int stock;
-	private String SpecialFeatures;
-	private int TrackCount;
+	private String specialFeatures;
+	private int trackCount;
 	private String tracklist;
 	
 	
@@ -45,11 +45,11 @@ public class RecordStore {
 	}
 
 	public String getAlbumTitle() {
-		return AlbumTitle;
+		return albumTitle;
 	}
 
 	public void setAlbumTitle(String albumTitle) {
-		AlbumTitle = albumTitle;
+		albumTitle = albumTitle;
 	}
 
 	public String getColor() {
@@ -109,19 +109,19 @@ public class RecordStore {
 	}
 
 	public int getReleaseYear() {
-		return ReleaseYear;
+		return releaseYear;
 	}
 
 	public void setReleaseYear(int releaseYear) {
-		ReleaseYear = releaseYear;
+		releaseYear = releaseYear;
 	}
 
 	public String getReleaseType() {
-		return ReleaseType;
+		return releaseType;
 	}
 
 	public void setReleaseType(String releaseType) {
-		ReleaseType = releaseType;
+		releaseType = releaseType;
 	}
 
 	public int getStock() {
@@ -133,19 +133,19 @@ public class RecordStore {
 	}
 
 	public String getSpecialFeatures() {
-		return SpecialFeatures;
+		return specialFeatures;
 	}
 
 	public void setSpecialFeatures(String specialFeatures) {
-		SpecialFeatures = specialFeatures;
+		specialFeatures = specialFeatures;
 	}
 
 	public int getTrackCount() {
-		return TrackCount;
+		return trackCount;
 	}
 
 	public void setTrackCount(int trackCount) {
-		TrackCount = trackCount;
+		trackCount = trackCount;
 	}
 
 	public String getTracklist() {
@@ -158,11 +158,11 @@ public class RecordStore {
 
 	@Override
 	public String toString() {
-		return "RecordStore [id=" + id + ", artist=" + artist + ", AlbumTitle=" + AlbumTitle + ", color=" + color
+		return "RecordStore [id=" + id + ", artist=" + artist + ", albumTitle=" + albumTitle + ", color=" + color
 				+ ", condition=" + condition + ", duration=" + duration + ", format=" + format + ", genre=" + genre
-				+ ", label=" + label + ", price=" + price + ", ReleaseYear=" + ReleaseYear + ", ReleaseType="
-				+ ReleaseType + ", stock=" + stock + ", SpecialFeatures=" + SpecialFeatures + ", TrackCount="
-				+ TrackCount + ", tracklist=" + tracklist + "]";
+				+ ", label=" + label + ", price=" + price + ", releaseYear=" + releaseYear + ", releaseType="
+				+ releaseType + ", stock=" + stock + ", specialFeatures=" + specialFeatures + ", trackCount="
+				+ trackCount + ", tracklist=" + tracklist + "]";
 	}
 	
 	

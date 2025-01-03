@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Two Cat Tracks</title>
+<title>Record Details</title>
 </head>
 <body>
 	<jsp:include page="homebutton.jsp" />
@@ -20,9 +20,9 @@
 		<c:when test="${not empty film}"> --%>
 			<h2>Record Details:</h2>
 			<ul>
-				<li><strong>ID:</strong> ${recordStore.id}</li>
-				<li><strong>Artist:</strong> ${recordStore.artist}</li>
-				<li><strong>Album Title:</strong> ${recordStore.albumTitle}</li>
+				<li><strong>ID:</strong> ${record.id}</li>
+				<li><strong>Artist:</strong> ${record.artist}</li>
+				<li><strong>Album Title:</strong> ${record.albumTitle}</li>
 			</ul>
 
 			<%-- <!--DELETE FORM -->
