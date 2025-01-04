@@ -21,7 +21,7 @@
 		</fieldset>
 	</form>
 	
-	<form action="inventory.jsp" method="get">
+	<form action="inventory.do" method="get">
 		<input type="submit" value="View Inventory">
 	</form>
 

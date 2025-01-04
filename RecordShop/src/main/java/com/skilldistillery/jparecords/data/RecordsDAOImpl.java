@@ -51,33 +51,33 @@ public class RecordsDAOImpl implements RecordsDAO {
 		return em.find(RecordStore.class, id);
 	}
 	
-
-	public RecordStore populateRecordFromResultSet(ResultSet rs) {
-		RecordStore record = new RecordStore();
-		try {
-			record.setId(rs.getInt("id")); 
-			record.setArtist(rs.getString("artist")); 
-			record.setAlbumTitle(rs.getString("albumTitle")); 
-			record.setColor(rs.getString("color")); 
-			record.setCondition(rs.getString("condition")); 
-			record.setDuration(rs.getInt("duration")); 
-			record.setFormat(rs.getString("format")); 
-			record.setGenre(rs.getString("genre")); 
-			record.setLabel(rs.getString("label")); 
-			record.setPrice(rs.getDouble("price")); 
-			record.setReleaseYear(rs.getInt("releaseYear")); 
-			record.setReleaseType(rs.getString("releaseType")); 
-			record.setStock(rs.getInt("stock")); 
-			record.setSpecialFeatures(rs.getString("specialFeatures")); 
-			record.setTrackCount(rs.getInt("trackCount")); 
-			record.setTracklist(rs.getString("tracklist"));
-		
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return record;
-	
-}
+//
+//	public RecordStore populateRecordFromResultSet(ResultSet rs) {
+//		RecordStore record = new RecordStore();
+//		try {
+//			record.setId(rs.getInt("id")); 
+//			record.setArtist(rs.getString("artist")); 
+//			record.setAlbumTitle(rs.getString("albumTitle")); 
+//			record.setColor(rs.getString("color")); 
+//			record.setCondition(rs.getString("condition")); 
+//			record.setDuration(rs.getString("duration")); 
+//			record.setFormat(rs.getString("format")); 
+//			record.setGenre(rs.getString("genre")); 
+//			record.setLabel(rs.getString("label")); 
+//			record.setPrice(rs.getDouble("price")); 
+//			record.setReleaseYear(rs.getInt("releaseYear")); 
+//			record.setReleaseType(rs.getString("releaseType")); 
+//			record.setStock(rs.getInt("stock")); 
+//			record.setSpecialFeatures(rs.getString("specialFeatures")); 
+//			record.setTrackCount(rs.getInt("trackCount")); 
+//			record.setTracklist(rs.getString("tracklist"));
+//		
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return record;
+//	
+//}
 
 	@Override
 	public List<RecordStore> findAll() {

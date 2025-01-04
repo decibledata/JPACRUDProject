@@ -38,11 +38,11 @@ public class RecordController {
 		return "newrecord";
 	}
 	//List all records
-	@GetMapping("/inventory.do")
+	@GetMapping("inventory.do")
 	public String goInventory(Model model) {
 		List<RecordStore> store = recordsdao.findAll();
 		model.addAttribute("store", store);
-		return "inventory";
+		return "views/inventory";
 	}
 	
 }

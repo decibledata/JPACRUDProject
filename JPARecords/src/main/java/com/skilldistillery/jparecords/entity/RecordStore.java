@@ -17,7 +17,7 @@ public class RecordStore {
 	private String albumTitle;
 	private String color;
 	private String condition;
-	private int duration;
+	private String duration;
 	private String format;
 	private String genre;
 	private String label;
@@ -70,11 +70,11 @@ public class RecordStore {
 		this.condition = condition;
 	}
 
-	public int getDuration() {
+	public String getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(String duration) {
 		this.duration = duration;
 	}
 
