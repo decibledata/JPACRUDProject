@@ -15,11 +15,10 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class RecordsDAOImpl implements RecordsDAO {
-	
+
 	private static final String URL = "jdbc:mysql://localhost:3306/recordsdb";
 	private String user = "twocat";
 	private String pass = "twocat";
-	
 
 	@PersistenceContext
 	private EntityManager em;
@@ -27,30 +26,48 @@ public class RecordsDAOImpl implements RecordsDAO {
 	@Override
 	public RecordStore create(RecordStore newRecord) {
 		em.persist(newRecord);
+		em.flush();
 		return null;
 	}
 
 	@Override
 	public RecordStore update(int id, RecordStore updateRecord) {
-		RecordStore update = em.find(RecordStore.class, id);
-		return null;
+		RecordStore edit = em.find(RecordStore.class, id);
+		if (edit != null) {
+			edit.setArtist(updateRecord.getArtist());
+			edit.setAlbumTitle(updateRecord.getAlbumTitle());
+			edit.setColor(updateRecord.getColor());
+			edit.setCondition(updateRecord.getCondition());
+			edit.setDuration(updateRecord.getDuration());
+			edit.setFormat(updateRecord.getFormat());
+			edit.setGenre(updateRecord.getGenre());
+			edit.setLabel(updateRecord.getLabel());
+			edit.setPrice(updateRecord.getPrice());
+			edit.setReleaseYear(updateRecord.getReleaseYear());
+			edit.setReleaseType(updateRecord.getReleaseType());
+			edit.setStock(updateRecord.getStock());
+			edit.setSpecialFeatures(updateRecord.getSpecialFeatures());
+			edit.setTrackCount(updateRecord.getTrackCount());
+			edit.setTracklist(updateRecord.getTracklist());
+		}
+		return edit;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		try {
-			RecordStore update = em.find(RecordStore.class, id);
-			em.remove(update);
-		} catch (Exception e) {
-			return false;
+		RecordStore delete = em.find(RecordStore.class, id);
+		if (delete != null) {
+			em.remove(delete);
+			return true;
 		}
-		return true;
+		return false;
 	}
+
 	@Override
 	public RecordStore findRecordById(int id) {
 		return em.find(RecordStore.class, id);
 	}
-	
+
 //
 //	public RecordStore populateRecordFromResultSet(ResultSet rs) {
 //		RecordStore record = new RecordStore();
@@ -82,7 +99,7 @@ public class RecordsDAOImpl implements RecordsDAO {
 	@Override
 	public List<RecordStore> findAll() {
 
-			String jpql = "SELECT r FROM RecordStore r";
-			return em.createQuery(jpql, RecordStore.class).getResultList();
-}
+		String jpql = "SELECT r FROM RecordStore r";
+		return em.createQuery(jpql, RecordStore.class).getResultList();
+	}
 }

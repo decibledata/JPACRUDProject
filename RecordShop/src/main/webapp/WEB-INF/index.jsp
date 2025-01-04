@@ -6,9 +6,94 @@
 <head>
 <meta charset="UTF-8">
 <title>Two Cats Tracks</title>
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap"
+	rel="stylesheet">
+
+
+<style>
+html, body {
+	height: 200%;
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	background: linear-gradient(#1a1a1a, #ffe4e1);
+	text-align: center;
+	padding: 40px;
+	color: #333;
+}
+
+h1 {
+	font-size: 4em;
+	color: #ff3d3d;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+p {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.5em;
+	color: #ffe4e1;
+	margin-bottom: 40px;
+}
+
+form {
+	font-family: 'Quicksand', sans-serif;
+	background-color: #e0e0e0;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+fieldset {
+	border: none;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+	background-color: #ff3d3d;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px;
+	cursor: pointer;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s eas-in-out;
+}
+
+button:hover, input[type="submit"]:hover {
+	background-color: #ff6f6f;
+	transform: translateY(-3px);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="number"] {
+	font-size: 1em;
+	padding: 5px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+</style>
+
+
+
+
+
 </head>
 <body>
-	<h1>Welcome to Two Cat Tracks</h1>
+	<h1>Two Cat Tracks</h1>
 	<p>Purr-fect tunes, Just for you!</p>
 
 	<form action="result.do" method="GET">
@@ -20,11 +105,11 @@
 				id="id"> <input type="submit" value="Search">
 		</fieldset>
 	</form>
-	
+
 	<form action="inventory.do" method="get">
 		<input type="submit" value="View Inventory">
 	</form>
 
-	</body>
-	
+</body>
+
 </html>

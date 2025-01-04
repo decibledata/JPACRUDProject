@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.jparecords.data.RecordsDAO;
@@ -32,11 +33,26 @@ public class RecordController {
 	}
 	
 	//Record Creation Form
-	@GetMapping("newrecord.do")
-	public String goNewRecord(Model model) {
-		model.addAttribute("newRecord", new RecordStore());
-		return "newrecord";
+	@PostMapping("newRecord.do")
+	public String goNewRecord(Model model, RecordStore newRecord) {
+		recordsdao.create(newRecord);
+		return "redirect:inventory.do";
 	}
+	
+	//Update Record
+	@PostMapping("updateRecord.do")
+	public String goUpdateRecord(Model model, @RequestParam("id") int id, RecordStore updatedRecord) {
+		recordsdao.update(id, updatedRecord);
+		return "redirect:inventory.do";
+	}
+	
+	//Delete Record By Id
+	@GetMapping("deleteRecord.do")
+	public String deleteRecord(@RequestParam("id") int id) {
+		recordsdao.deleteById(id);
+		return "redirect:inventory.do";
+	}
+	
 	//List all records
 	@GetMapping("inventory.do")
 	public String goInventory(Model model) {
