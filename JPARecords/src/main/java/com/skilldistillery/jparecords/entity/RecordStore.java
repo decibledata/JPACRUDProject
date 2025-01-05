@@ -29,6 +29,9 @@ public class RecordStore {
 	private int trackCount;
 	private String tracklist;
 	
+	public RecordStore() {
+		
+	}
 	
 	public int getId() {
 		return id;

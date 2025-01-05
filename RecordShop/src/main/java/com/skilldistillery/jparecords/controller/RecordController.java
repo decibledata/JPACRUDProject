@@ -54,7 +54,7 @@ public class RecordController {
 
 	// Update Record
 	@PostMapping("updateRecord.do")
-	public String goUpdateRecord(Model model, @RequestParam("id") int id, RecordStore updatedRecord) {
+	public String goUpdateRecord(@RequestParam("id") int id, @ModelAttribute RecordStore updatedRecord) {
 		recordsdao.update(id, updatedRecord);
 		return "redirect:inventory.do";
 	}

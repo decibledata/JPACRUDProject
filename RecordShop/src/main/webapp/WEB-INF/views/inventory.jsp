@@ -133,21 +133,19 @@ form button:focus {
 							<td>${record.genre}</td>
 							<td>${record.format}</td>
 							<td>${record.stock}</td>
-							<td>
-								<form:form action="updateRecord.do?id=${record.id}" method="post"
-									style="display: inline;">
+							<td><form:form action="updateRecord.do?id=${record.id}"
+									method="post" style="display: inline;">
 									<input type="text" name="artist" value="${record.artist}"
-										required /> <input type="text" name="albumTitle"
-										value="${record.albumTitle}" required /> <input type="text"
-										name="genre" value="${record.genre}" /> <input type="text"
-										name="format" value="${record.format}" /> <input
-										type="number" name="stock" value="${record.stock}" />
+										required />
+									<input type="text" name="albumTitle"
+										value="${record.albumTitle}" required />
+									<input type="text" name="genre" value="${record.genre}" />
+									<input type="text" name="format" value="${record.format}" />
+									<input type="number" name="stock" value="${record.stock}" />
 									<button type="submit">Update</button>
-								</form:form> 
-								<a href="deleteRecord.do?id=${record.id}"
+								</form:form> <a href="deleteRecord.do?id=${record.id}"
 								onclick="return confirm('Are you sure you want to delete this record from the Inventory?');">
-									Delete</a>
-							</td>
+									Delete</a></td>
 						</tr>
 					</c:forEach>
 				</c:when>

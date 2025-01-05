@@ -37,7 +37,7 @@ h1 {
 }
 
 h3, label {
-color: #D0DEC7;
+	color: #D0DEC7;
 }
 
 p {

@@ -100,7 +100,7 @@ button:hover, input[type="submit"]:hover {
 				<li><strong>ID:</strong> ${record.id}</li>
 				<li><strong>Artist:</strong> ${record.artist}</li>
 				<li><strong>Album Title:</strong> ${record.albumTitle}</li>
-				<li><strong>Color:</strong> ${ecord.color}</li>
+				<li><strong>Color:</strong> ${record.color}</li>
 				<li><strong>Condition:</strong> ${record.condition}</li>
 				<li><strong>Duration:</strong> ${record.duration}</li>
 				<li><strong>Format:</strong> ${record.format}</li>

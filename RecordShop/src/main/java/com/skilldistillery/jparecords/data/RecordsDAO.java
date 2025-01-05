@@ -15,5 +15,4 @@ public interface RecordsDAO {
 	RecordStore update(int id, RecordStore updatRecord);
 
 	boolean deleteById(int id);
-
 }

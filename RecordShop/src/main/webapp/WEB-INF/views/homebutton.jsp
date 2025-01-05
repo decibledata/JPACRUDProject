@@ -1,7 +1,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
 <form action="index.do" method="get">
-    <button type="submit">Home</button>
+	<button type="submit">Home</button>
 </form>
 
 <style>
@@ -24,5 +24,4 @@ button:hover, input[type="submit"]:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
-
 </style>
