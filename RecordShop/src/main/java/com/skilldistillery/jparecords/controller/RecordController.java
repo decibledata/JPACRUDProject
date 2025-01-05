@@ -43,8 +43,12 @@ public class RecordController {
 	@PostMapping("newRecord.do")
 	public String createNewRecord(@ModelAttribute RecordStore newRecord, Model model) {
 		try {
-			recordsdao.create(newRecord);
+			RecordStore createdRecord = recordsdao.create(newRecord);
+			if (createdRecord!= null) {
 			model.addAttribute("message", "Record Added Successfully!");
+		}else {
+			model.addAttribute("message", "Failed to Add Record.");
+		}
 			return "redirect:inventory.do";
 		} catch (Exception e) {
 			model.addAttribute("message", "Error adding record");

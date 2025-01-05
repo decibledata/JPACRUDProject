@@ -19,9 +19,19 @@ public class RecordsDAOImpl implements RecordsDAO {
 
 	@Override
 	public RecordStore create(RecordStore newRecord) {
-		em.persist(newRecord);
-		em.flush();
-		return newRecord;
+		try {
+			em.getTransaction().begin();
+			em.persist(newRecord);
+			em.flush();
+			em.getTransaction().commit();
+			return newRecord;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			e.printStackTrace();
+			return null;
+		} finally {
+			em.close();
+		}
 	}
 
 	@Override

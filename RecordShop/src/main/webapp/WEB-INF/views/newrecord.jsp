@@ -48,30 +48,34 @@ p {
 <body>
 	<form action="newRecord.do" method="post">
 		<label for="artist">Artist:</label> <input type="text" name="artist"
-			id="artist" required /><br> <label for="albumTitle">Album
-			Title:</label> <input type="text" name="albumTitle" id="albumTitle" required /><br>
+			id="artist" required /><br> 
+		<label for="albumTitle">Album Title:</label> <input type="text" name="albumTitle" id="albumTitle" required /><br>
 
-		<label for="color">Color:</label> <input type="text" name="color"
-			id="color" /><br> <label for="condition">Condition:</label> <input
-			type="text" name="condition" id="condition" /><br> <label
-			for="duration">Duration:</label> <input type="text" name="duration"
-			id="duration" /><br> <label for="format">Format:</label> <input
-			type="text" name="format" id="format" /><br> <label for="genre">Genre:</label>
-		<input type="text" name="genre" id="genre" /><br> <label
-			for="label">Label:</label> <input type="text" name="label" id="label" /><br>
+		<label for="color">Color:</label> <input type="text" name="color"id="color" /><br> 
+		
+		<label for="condition">Condition:</label> <input type="text" name="condition" id="condition" /><br> 
+			
+		<label for="duration">Duration:</label> <input type="text" name="duration" id="duration" /><br> 
+		
+		<label for="format">Format:</label> <input type="text" name="format" id="format" /><br> 
+		
+		<label for="genre">Genre:</label> <input type="text" name="genre" id="genre" /><br> 
+		
+		<label for="label">Label:</label> <input type="text" name="label" id="label" /><br>
 
-		<label for="price">Price:</label> <input type="number" name="price"
-			id="price" step="0.01" required /><br> <label for="releaseYear">Release
-			Year:</label> <input type="number" name="releaseYear" id="releaseYear"
-			required /><br> <label for="releaseType">Release Type:</label>
-		<input type="text" name="releaseType" id="releaseType" /><br> <label
-			for="stock">Stock:</label> <input type="number" name="stock"
-			id="stock" required /><br> <label for="specialFeatures">Special
-			Features:</label> <input type="text" name="specialFeatures"
-			id="specialFeatures" /><br> <label for="trackCount">Track
-			Count:</label> <input type="number" name="trackCount" id="trackCount"
-			required /><br> <label for="tracklist">Tracklist:</label> <input
-			type="text" name="tracklist" id="tracklist" /><br>
+		<label for="price">Price:</label> <input type="number" name="price" id="price" step="0.01" required /><br> 
+			
+		<label for="releaseYear">Release Year:</label> <input type="number" name="releaseYear" id="releaseYear" required /><br> 
+		
+		<label for="releaseType">Release Type:</label> <input type="text" name="releaseType" id="releaseType" /><br> 
+		
+		<label for="stock">Stock:</label> <input type="number" name="stock" id="stock" required /><br> 
+			
+		<label for="specialFeatures">Special Features:</label> <input type="text" name="specialFeatures" id="specialFeatures" /><br> 
+			
+		<label for="trackCount">Track Count:</label> <input type="number" name="trackCount" id="trackCount" required /><br> 
+			
+		<label for="tracklist">Tracklist:</label> <input type="text" name="tracklist" id="tracklist" /><br>
 
 		<button type="submit">Add Record</button>
 	</form>
