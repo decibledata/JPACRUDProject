@@ -27,7 +27,7 @@ public class RecordsDAOImpl implements RecordsDAO {
 	public RecordStore create(RecordStore newRecord) {
 		em.persist(newRecord);
 		em.flush();
-		return null;
+		return newRecord;
 	}
 
 	@Override

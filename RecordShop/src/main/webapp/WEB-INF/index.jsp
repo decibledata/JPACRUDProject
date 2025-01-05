@@ -21,31 +21,35 @@ html, body {
 
 body {
 	font-family: 'Quicksand', sans-serif;
-	background: linear-gradient(#1a1a1a, #ffe4e1);
+	background: linear-gradient(#F7DF95, #2A2A42);
 	text-align: center;
 	padding: 40px;
-	color: #333;
+	color: #545F95;
 }
 
 h1 {
 	font-size: 4em;
-	color: #ff3d3d;
+	color: ##545F95;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin-bottom: 20px;
 	text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
 }
 
+h3, label {
+color: #D0DEC7;
+}
+
 p {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 2.5em;
-	color: #ffe4e1;
+	color: #E93F25;
 	margin-bottom: 40px;
 }
 
 form {
 	font-family: 'Quicksand', sans-serif;
-	background-color: #e0e0e0;
+	background-color: #2A2A42;
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
@@ -62,7 +66,7 @@ button, input[type="submit"] {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 1.2em;
 	color: #fff;
-	background-color: #ff3d3d;
+	background-color: #E93F25;
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -73,7 +77,7 @@ button, input[type="submit"] {
 }
 
 button:hover, input[type="submit"]:hover {
-	background-color: #ff6f6f;
+	background-color: #F7DF95;
 	transform: translateY(-3px);
 	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
@@ -86,10 +90,6 @@ input[type="number"] {
 	border-radius: 5px;
 }
 </style>
-
-
-
-
 
 </head>
 <body>
