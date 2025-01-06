@@ -28,6 +28,7 @@ public class RecordsDAOImpl implements RecordsDAO {
 			System.out.println("Record persisted: " + newRecord);
 			em.getTransaction().commit();
 			System.out.println("Transaction committed");
+			em.clear();
 			return newRecord;
 		} catch (Exception e) {
 			em.getTransaction().rollback();
