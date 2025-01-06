@@ -104,6 +104,7 @@ form button:focus {
 		<button type="submit">Go to Creation Page</button>
 	</form>
 
+
 	<h1>Inventory</h1>
 
 
@@ -123,7 +124,7 @@ form button:focus {
 		<tbody>
 			<c:choose>
 				<c:when test="${not empty store}">
-					<c:forEach items="${store}" var="record">
+					<c:forEach var="record" items="${store}">
 						<tr>
 							<td>${record.id}</td>
 
@@ -133,12 +134,9 @@ form button:focus {
 							<td>${record.genre}</td>
 							<td>${record.format}</td>
 							<td>${record.stock}</td>
-							<td><form:form action="updateRecord.do?id=${record.id}"
-									method="post" style="display: inline;">
-									<input type="text" name="artist" value="${record.artist}"
-										required />
-									<input type="text" name="albumTitle"
-										value="${record.albumTitle}" required />
+							<td><form:form action="updateRecord.do?id=${record.id}" method="post" style="display: inline;">
+									<input type="text" name="artist" value="${record.artist}" required />
+									<input type="text" name="albumTitle" value="${record.albumTitle}" required />
 									<input type="text" name="genre" value="${record.genre}" />
 									<input type="text" name="format" value="${record.format}" />
 									<input type="number" name="stock" value="${record.stock}" />

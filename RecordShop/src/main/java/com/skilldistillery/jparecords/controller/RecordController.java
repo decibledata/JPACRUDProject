@@ -42,17 +42,25 @@ public class RecordController {
 	// Form Submission
 	@PostMapping("newRecord.do")
 	public String createNewRecord(@ModelAttribute RecordStore newRecord, Model model) {
+		System.out.println("Record Recieved: " + newRecord);
 		try {
 			RecordStore createdRecord = recordsdao.create(newRecord);
 			if (createdRecord!= null) {
+				System.out.println("Record successfully added to the database");
 			model.addAttribute("message", "Record Added Successfully!");
+			
+			List<RecordStore> updatedList = recordsdao.findAll();
+			model.addAttribute("store", updatedList);
+			
+			
 		}else {
+			System.out.println("Record creation failed.");
 			model.addAttribute("message", "Failed to Add Record.");
 		}
-			return "redirect:inventory.do";
+			return "redirect:/inventory.do";
 		} catch (Exception e) {
-			model.addAttribute("message", "Error adding record");
-			return "redirect:inventory.do";
+			model.addAttribute("message", "Error adding record" + e.getMessage());
+			return "redirect:/inventory.do";
 		}
 	}
 
@@ -74,6 +82,7 @@ public class RecordController {
 	@GetMapping("inventory.do")
 	public String goInventory(Model model) {
 		List<RecordStore> store = recordsdao.findAll();
+		System.out.println("Fetched Records: " + store);
 		model.addAttribute("store", store);
 		return "views/inventory";
 	}

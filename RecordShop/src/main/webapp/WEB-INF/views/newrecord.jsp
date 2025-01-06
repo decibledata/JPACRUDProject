@@ -17,12 +17,12 @@
 html, body {
 	height: 200%;
 	margin: 0;
-	overflow: hidden;
+	overflow: auto;
 }
 
 body {
 	font-family: 'Quicksand', sans-serif;
-	background: linear-gradient(#F7DF95, #2A2A42);
+	background: #F7DF95;
 	text-align: center;
 	padding: 40px;
 	color: #333;
@@ -37,6 +37,22 @@ h1 {
 	text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
 }
 
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+form input, form button {
+	width: 300px;
+	max-width: 80%;
+	padding: 10px;
+	font-size: 1em;
+	border: 2px solid #545f95;
+	border-radius: 5px;
+}
+
 p {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 2.5em;
@@ -47,6 +63,8 @@ p {
 
 <body>
 	<form action="newRecord.do" method="post">
+		<label for="id">Record ID:</label> <input type="number" name="id" id="id" required /><br>
+	
 		<label for="artist">Artist:</label> <input type="text" name="artist"
 			id="artist" required /><br> 
 		<label for="albumTitle">Album Title:</label> <input type="text" name="albumTitle" id="albumTitle" required /><br>

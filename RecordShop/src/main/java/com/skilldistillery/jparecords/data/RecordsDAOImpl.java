@@ -23,6 +23,7 @@ public class RecordsDAOImpl implements RecordsDAO {
 			em.getTransaction().begin();
 			em.persist(newRecord);
 			em.flush();
+			System.out.println("Record persisted: " + newRecord);
 			em.getTransaction().commit();
 			return newRecord;
 		} catch (Exception e) {
