@@ -1,5 +1,6 @@
 package com.skilldistillery.jparecords.data;
 
+import java.sql.Connection;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,12 +20,14 @@ public class RecordsDAOImpl implements RecordsDAO {
 
 	@Override
 	public RecordStore create(RecordStore newRecord) {
+		Connection conn = null;
 		try {
 			em.getTransaction().begin();
 			em.persist(newRecord);
 			em.flush();
 			System.out.println("Record persisted: " + newRecord);
 			em.getTransaction().commit();
+			System.out.println("Transaction committed");
 			return newRecord;
 		} catch (Exception e) {
 			em.getTransaction().rollback();
@@ -75,7 +78,6 @@ public class RecordsDAOImpl implements RecordsDAO {
 
 	@Override
 	public List<RecordStore> findAll() {
-
 		String jpql = "SELECT r FROM RecordStore r";
 		return em.createQuery(jpql, RecordStore.class).getResultList();
 	}

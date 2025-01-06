@@ -48,11 +48,6 @@ public class RecordController {
 			if (createdRecord!= null) {
 				System.out.println("Record successfully added to the database");
 			model.addAttribute("message", "Record Added Successfully!");
-			
-			List<RecordStore> updatedList = recordsdao.findAll();
-			model.addAttribute("store", updatedList);
-			
-			
 		}else {
 			System.out.println("Record creation failed.");
 			model.addAttribute("message", "Failed to Add Record.");
