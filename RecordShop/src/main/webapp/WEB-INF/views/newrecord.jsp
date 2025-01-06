@@ -63,7 +63,6 @@ p {
 
 <body>
 	<form action="newRecord.do" method="post">
-		<label for="id">Record ID:</label> <input type="number" name="id" id="id" required /><br>
 	
 		<label for="artist">Artist:</label> <input type="text" name="artist"
 			id="artist" required /><br> 

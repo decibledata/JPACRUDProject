@@ -20,13 +20,10 @@ public class RecordsDAOImpl implements RecordsDAO {
 
 	@Override
 	public RecordStore create(RecordStore newRecord) {
-		Connection conn = null;
 		try {
-			em.getTransaction().begin();
 			em.persist(newRecord);
 			em.flush();
 			System.out.println("Record persisted: " + newRecord);
-			em.getTransaction().commit();
 			System.out.println("Transaction committed");
 			em.clear();
 			return newRecord;
@@ -34,14 +31,14 @@ public class RecordsDAOImpl implements RecordsDAO {
 			em.getTransaction().rollback();
 			e.printStackTrace();
 			return null;
-		} finally {
-			em.close();
-		}
+		} 
 	}
 
 	@Override
 	public RecordStore update(int id, RecordStore updateRecord) {
 		RecordStore edit = em.find(RecordStore.class, id);
+		System.out.println(id);
+		System.out.println(updateRecord);
 		if (edit != null) {
 			edit.setArtist(updateRecord.getArtist());
 			edit.setAlbumTitle(updateRecord.getAlbumTitle());
